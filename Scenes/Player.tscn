@@ -46,13 +46,11 @@ extents = Vector2( 2.5, 9.75 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -68,14 +66,3 @@ position = Vector2( -0.5, 2.25 )
 shape = SubResource( 2 )
 
 [node name="Dash" parent="Player" instance=ExtResource( 20 )]
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
-position = Vector2( -7.45058e-08, 10 )
-rotation = 1.5708
-emitting = false
-amount = 1
-lifetime = 0.6
-angle = 40.0
-scale_amount = 4.0
-scale_amount_random = 0.5
-color = Color( 0.423529, 0.423529, 0.423529, 0.313726 )

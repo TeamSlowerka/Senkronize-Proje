@@ -43,4 +43,3 @@ custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 max_value = 5.0
 step = 1.0
-value = 5.0
