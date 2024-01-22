@@ -24,8 +24,10 @@ func process_input():
 	direction = Vector2()
 	if Input.is_action_pressed("D"):
 		direction.x += 1
+		$CPUParticles2D.emitting = true
 	if Input.is_action_pressed("A"):
 		direction.x -= 1
+		$CPUParticles2D.emitting = true
 
 	if is_on_floor() and Input.is_action_just_pressed("Space"):
 		start_jump()
@@ -36,7 +38,8 @@ func start_jump():
 
 func update_movement(delta):
 	if Input.is_action_just_pressed("dash"):
-		dash.start_dash(dash_length)
+		if Global.dash_yetenek == true:
+			dash.start_dash(dash_length)
 	
 	var speed = dash_speed if dash.is_dashing() else normal_speed
 	
@@ -52,5 +55,6 @@ func player_animation():
 			$AnimatedSprite.play("Walk")
 		else:
 			$AnimatedSprite.play("Idle")
+			$CPUParticles2D.emitting = false
 	else:
 		$AnimatedSprite.play("Jump")
