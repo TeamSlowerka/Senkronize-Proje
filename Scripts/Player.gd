@@ -3,8 +3,8 @@ extends KinematicBody2D
 var direction = Vector2()
 var velocity = Vector2()
 var normal_speed = 100
-var gravity = 1000
-var jump_strength = 260
+var gravity = 15
+var jump_strength = -260
 
 const dash_speed = 350
 const dash_length = 0.2
@@ -32,7 +32,7 @@ func process_input():
 		return
 
 func start_jump():
-	velocity.y = -jump_strength
+	velocity.y = jump_strength
 
 func update_movement(delta):
 	if Input.is_action_just_pressed("dash"):
@@ -42,7 +42,7 @@ func update_movement(delta):
 	var speed = dash_speed if dash.is_dashing() else normal_speed
 	
 	velocity.x = direction.x * speed
-	velocity.y += gravity * delta
+	velocity.y += gravity 
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 
