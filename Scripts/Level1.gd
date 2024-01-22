@@ -2,7 +2,7 @@ extends Node2D
 
 var reset = false
 
-func _process(delta):
+func _process(_delta):
 	if reset:
 		get_tree().reload_current_scene()
 		Global.coin = 0
