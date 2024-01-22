@@ -1,0 +1,64 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/idle/Animation Base-export2.png" type="Texture" id=1]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/idle/Animation Base-export1.png" type="Texture" id=2]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export4.png" type="Texture" id=3]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export1.png" type="Texture" id=4]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export7.png" type="Texture" id=5]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export6.png" type="Texture" id=6]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export8.png" type="Texture" id=7]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export2.png" type="Texture" id=8]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export5.png" type="Texture" id=9]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/run/Animation Base-export3.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=11]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export1.png" type="Texture" id=12]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export3.png" type="Texture" id=13]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export2.png" type="Texture" id=14]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export4.png" type="Texture" id=15]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export6.png" type="Texture" id=16]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export7.png" type="Texture" id=17]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export8.png" type="Texture" id=18]
+[ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export5.png" type="Texture" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 9.5 )
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 1 )
+animation = "Walk"
+frame = 4
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+rotating = true
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+smoothing_speed = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -0.5, 2.5 )
+shape = SubResource( 2 )
