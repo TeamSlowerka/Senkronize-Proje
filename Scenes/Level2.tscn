@@ -396,6 +396,7 @@ position = Vector2( 0, -1.19209e-07 )
 scale = Vector2( 1.42308, 1.41827 )
 frames = SubResource( 9 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Giant2"]
@@ -414,7 +415,6 @@ text = "Daha fazla yakinlas..."
 script = ExtResource( 21 )
 
 [node name="Level2Portal" type="Area2D" parent="LevelDevam2"]
-visible = false
 position = Vector2( 233, 318 )
 monitoring = false
 script = ExtResource( 20 )
@@ -424,7 +424,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDevam2/Level2Portal"]
 frames = SubResource( 20 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDevam2/Level2Portal"]
@@ -434,3 +434,4 @@ shape = SubResource( 21 )
 [connection signal="body_entered" from="Giant2" to="Giant2" method="_on_Giant_body_entered"]
 [connection signal="hide" from="Giant2" to="Giant2" method="_on_Giant_hide"]
 [connection signal="body_entered" from="LevelDevam2/Level2Portal" to="LevelDevam2/Level2Portal" method="_on_Level1Portal_body_entered"]
+[connection signal="body_entered" from="LevelDevam2/Level2Portal" to="LevelDevam2/Level2Portal" method="_on_Level2Portal_body_entered"]
