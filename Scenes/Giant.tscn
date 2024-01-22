@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Giant.gd" type="Script" id=1]
+[ext_resource path="res://Marcus7z Pack v1/Characters/emo/1/run2.png" type="Texture" id=2]
+[ext_resource path="res://Marcus7z Pack v1/Characters/emo/1/run1.png" type="Texture" id=3]
+[ext_resource path="res://Font/EXEPixelPerfect.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 13.5 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[node name="Giant" type="Node2D"]
+
+[node name="Giant" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Giant"]
+position = Vector2( 0, -1.19209e-07 )
+scale = Vector2( 1.42308, 1.41827 )
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Giant"]
+position = Vector2( 0, 3.5 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Giant"]
+margin_left = -3.0
+margin_top = -22.0
+margin_right = 46.0
+margin_bottom = -8.0
+custom_fonts/font = SubResource( 3 )
+text = "Yakinlas..."
+
+[connection signal="body_entered" from="Giant" to="Giant" method="_on_Giant_body_entered"]
+[connection signal="hide" from="Giant" to="Giant" method="_on_Giant_hide"]

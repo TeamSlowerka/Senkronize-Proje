@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/para.wav-c285c2ffa9f903a438f0fa03b76473fb.sample"
+
+[deps]
+
+source_file="res://PlewrPack/para.wav"
+dest_files=[ "res://.import/para.wav-c285c2ffa9f903a438f0fa03b76473fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

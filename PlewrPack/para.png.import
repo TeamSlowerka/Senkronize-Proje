@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/run2.png-a0722a55e60261a82b954fafe98b9975.stex"
+path="res://.import/para.png-8e2cbd1c44f3d43aa05d90a6684f5f04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Marcus7z Pack v1/Characters/emo/1/run2.png"
-dest_files=[ "res://.import/run2.png-a0722a55e60261a82b954fafe98b9975.stex" ]
+source_file="res://PlewrPack/para.png"
+dest_files=[ "res://.import/para.png-8e2cbd1c44f3d43aa05d90a6684f5f04.stex" ]
 
 [params]
 

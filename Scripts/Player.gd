@@ -4,7 +4,7 @@ var direction = Vector2()
 var velocity = Vector2()
 var speed = 100
 var gravity = 1000
-var jump_strength = 220
+var jump_strength = 260
 
 func _ready():
 	pass
@@ -21,9 +21,17 @@ func process_input():
 	if Input.is_action_pressed("A"):
 		direction.x -= 1
 
+	if is_on_floor() and Input.is_action_just_pressed("Space"):
+		start_jump()
+		return
+
+func start_jump():
+	velocity.y = -jump_strength
+
 func update_movement(delta):
 	velocity.x = direction.x * speed
 	velocity.y += gravity * delta
+
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func player_animation():
@@ -33,3 +41,5 @@ func player_animation():
 			$AnimatedSprite.play("Walk")
 		else:
 			$AnimatedSprite.play("Idle")
+	else:
+		$AnimatedSprite.play("Jump")

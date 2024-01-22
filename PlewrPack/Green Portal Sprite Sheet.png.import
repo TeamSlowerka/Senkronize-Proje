@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/run2.png-a0722a55e60261a82b954fafe98b9975.stex"
+path="res://.import/Green Portal Sprite Sheet.png-076a07f3fd614ff06840893f6c76ff96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Marcus7z Pack v1/Characters/emo/1/run2.png"
-dest_files=[ "res://.import/run2.png-a0722a55e60261a82b954fafe98b9975.stex" ]
+source_file="res://PlewrPack/Green Portal Sprite Sheet.png"
+dest_files=[ "res://.import/Green Portal Sprite Sheet.png-076a07f3fd614ff06840893f6c76ff96.stex" ]
 
 [params]
 
