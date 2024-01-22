@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Marcus7z Pack v1/Characters/c1/idle/Animation Base-export2.png" type="Texture" id=1]
 [ext_resource path="res://Marcus7z Pack v1/Characters/c1/idle/Animation Base-export1.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export7.png" type="Texture" id=17]
 [ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export8.png" type="Texture" id=18]
 [ext_resource path="res://Marcus7z Pack v1/Characters/c1/walk/Animation Base-export5.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Dash.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -52,7 +53,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 4
+frame = 6
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -66,3 +67,5 @@ smoothing_speed = 4.0
 visible = false
 position = Vector2( -0.5, 2.25 )
 shape = SubResource( 2 )
+
+[node name="Dash" parent="Player" instance=ExtResource( 20 )]

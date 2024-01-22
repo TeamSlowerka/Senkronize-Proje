@@ -2,9 +2,15 @@ extends KinematicBody2D
 
 var direction = Vector2()
 var velocity = Vector2()
-var speed = 100
+var normal_speed = 100
 var gravity = 1000
 var jump_strength = 260
+
+const dash_speed = 350
+const dash_length = 0.2
+
+onready var dash = $Dash
+
 
 func _ready():
 	pass
@@ -29,6 +35,11 @@ func start_jump():
 	velocity.y = -jump_strength
 
 func update_movement(delta):
+	if Input.is_action_just_pressed("dash"):
+		dash.start_dash(dash_length)
+	
+	var speed = dash_speed if dash.is_dashing() else normal_speed
+	
 	velocity.x = direction.x * speed
 	velocity.y += gravity * delta
 
